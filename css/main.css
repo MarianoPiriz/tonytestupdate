@@ -1,0 +1,412 @@
+html {
+    overflow-x: hidden;
+}
+html::-webkit-scrollbar{
+    display: none;
+}
+
+body {
+    background-color: black;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#cnvs{
+    position: fixed;
+    top: 0;
+    left: 0; 
+    
+}
+@font-face {
+    font-family: "AlteHaasGrotesk";
+    src: url(/fonts/AlteHaasGroteskBold.ttf);
+}
+@font-face {
+    font-family: "Raleway";
+    src: url(/fonts/Raleway-VariableFont_wght.ttf);
+}
+
+h1 , li{
+    color: #D2FC01;
+    font-family: AlteHaasGrotesk , sans-serif;
+    font-size: clamp(3rem , 1rem + 5vw, 5rem);
+    line-height: 80%;
+}
+
+ul li {
+    
+    list-style: none;
+    display: inline-block;
+    padding: 0 0 0 2rem; 
+     
+}
+
+a {
+    position: relative;
+    text-decoration: none;
+    color: #D2FC01;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .8rem;
+    font-weight: bold;
+    cursor: pointer; 
+    z-index: 3;         
+}
+
+a:hover{
+    color: #fca901;
+    transition: .2s cubic-bezier(.3,1.29,.86,.6);
+}
+
+.floatleft{
+    float: left;
+}
+
+.heroHeading{
+    display: block;
+    padding: 0;
+    text-align: right;  
+}
+
+.title{
+    position: relative;
+    z-index: 3;
+}
+
+.asterix{
+    width: clamp(2rem , 1rem + 5vw, 3rem);
+    float: right;
+     
+}
+#socialButton{
+    width: clamp(1.5rem , 1rem + 5vw, 2.5rem); 
+}
+#socialButton:hover{
+    fill:#fca901;
+}
+
+
+
+.scrollWrap{
+    position: fixed;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+
+}
+
+section{
+    width: 100vw;
+    height: 100vh;
+}
+.navwrap{
+    align-self: flex-start;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.logoimg{
+    width: clamp(2rem , 1rem + 5vw, 4rem);
+}
+
+.navMenu{
+    display: none;
+    align-self: flex-start;
+}
+
+.navlinkswrap{
+    display: flex;
+    flex-direction: row;
+}
+
+.navlinks{
+    line-height: 0%;
+}
+
+.menuLinks::after{    
+    content: "";
+    width: 0px;
+    height: 1px;
+    background-color: #fca901;
+    display: block;
+}
+
+.menuLinks:hover::after{
+    animation-name: hover;
+    animation-duration: .5s;
+    animation-direction: alternate-reverse;    
+}
+
+@keyframes hover {
+    0%{width: 0;}
+    100%{width: 100%;}
+}
+
+.socialmenu{
+    padding: 10% 0 0 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sociallinks{
+    padding: 0 ;
+    line-height: 0%;
+}
+
+header{
+    display: grid;
+    align-items: center;
+    padding: 10%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 37% center;
+    height: 100%;    
+}
+
+.flexbox-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+     
+}
+
+.flexbox{
+    padding-top: 5% ;
+}
+
+.line{
+    position: relative;    
+    width: 100%;
+    height: 1vh;
+    background-color: #D2FC01;
+    z-index: 3;   
+}
+.floatleft{
+    float: left;
+}
+.top-cero{
+    top: 0;
+}
+
+.herohome{
+    background-image: url(/img/bio_bg.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 25% center;
+    position: relative;
+
+    
+}
+.heroabout{
+    background-image: url(/img/gigs_bg.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 45% center;
+    position: relative;
+
+}
+.heromixes{
+    padding-top: 20%;
+    background-image: url(/img/home_bg.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 45% center;
+    position: relative;
+
+}
+.herogigs{
+    padding-top: 20%;
+    background-image: url(/img/mixes_bg1.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 20% center;
+    position: relative;
+
+}
+
+.bio{
+    position: relative;
+    z-index: 3;
+    color: #D2FC01;
+    font-family: AlteHaasGrotesk , sans-serif;
+    font-size: 1rem;
+    line-height: 80%;
+    overflow: hidden;
+    padding-top: 2%;
+    padding-bottom: 2% ;
+}
+
+.spot{
+    display: none;
+    position: fixed;
+    width: 5vw;
+    height: 10vh;
+    background-color: #D2FC01;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10;
+    mix-blend-mode: difference;
+    opacity: 0;
+    transition: opacity transform .3s ease-in-out;
+
+}
+
+ .bio:hover ~ .spot{
+    transform: scale(2);
+} 
+
+.boxList{
+    padding-bottom: 2%;
+    
+    }
+    
+    .boxLinks{
+        margin: 0;
+        padding: 0;
+        line-height: 10%;
+        display: block;
+    }
+    
+    .boxDescript {
+        position: relative;
+        color: #D2FC01;
+        font-family: AlteHaasGrotesk, sans-serif;
+        font-size: clamp(1rem, 1rem + 1vw , 3rem);
+        line-height: 80%;
+        text-decoration: underline;
+        z-index: 3;   
+    }
+    
+    .boxDescript:hover{
+        color:#fca901;
+    }
+
+    .artwork{   
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity .3s ease-in-out;   
+        display: none; 
+        z-index: 0;     
+    }
+
+    /*////////////////////////////////////////////////////////////*/
+
+    @media(min-width:568px){
+    
+    
+        .reverse{
+            flex-direction: row-reverse;
+            justify-content: space-between;
+        }
+    
+        .order-1{
+            align-self: flex-end;
+            order: 2;
+        }
+        
+        .order-2{
+            order:1;   
+        }
+        
+        .order-3{
+            align-self: flex-end;
+            order:3;
+        }
+        .sociallinks{
+            padding: 0 .5rem 0 0;
+        }
+
+        header{
+            padding: 5%
+        }
+
+        h1 , li{
+         
+            font-size: clamp(1rem , 1rem + 4vw, 5rem);
+           
+        }
+
+        .bio{
+            font-size: 1rem;
+        }
+
+        .asterix{
+            width: clamp(1rem , 1rem + 3.5vw, 3rem);             
+        }
+        #socialButton{
+            width: clamp(1rem , 1rem + 3.5vw, 2.5rem); 
+        }
+
+        .order-2{
+            padding-top: 0;
+        }
+
+        .flexbox{
+            padding-top:2%;
+        }
+
+        .heromixes{
+            padding-top:0;
+        }
+
+        .herogigs{
+            padding-top:0;
+        }
+        
+    }
+
+    @media(min-height:667px){
+        .bio{
+            font-size:1.3rem;
+        }
+    }
+
+    @media(min-width:667px) {
+        .bio{
+            font-size: 1.2rem;
+        }
+    }
+
+  
+
+    @media(min-width:1024px){
+        .flx2, .flx3, .flx4 {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .box-2{
+            align-self: flex-end;
+            min-width: 30vw;
+        }
+
+        .navMenu{
+            display: block;
+        }
+        .bio{
+            font-size: 1.6rem;
+        }
+
+        h1, li{
+            font-size: clamp(3rem, 1rem + 5vw, 5rem);
+        }
+    }
+
+    
+    
+
+
+
+
+   
