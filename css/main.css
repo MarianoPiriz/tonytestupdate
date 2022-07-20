@@ -401,6 +401,10 @@ header{
         h1, li{
             font-size: clamp(3rem, 1rem + 5vw, 5rem);
         }
+        header{
+            padding: 5% 10% ;
+        }
+
     }
 
     
